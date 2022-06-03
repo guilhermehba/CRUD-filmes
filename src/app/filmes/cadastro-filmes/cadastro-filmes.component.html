@@ -7,84 +7,15 @@
       (ngSubmit)="submit()"
       (ngReset)="reiniciarForm()"
     >
-      <mat-card-content>
-        <mat-form-field class="full-width">
-          <input
-            matInput
-            type="text"
-            required
-            placeholder="Titulo"
-            name="titulo"
-            formControlName="titulo"
-          />
-          <mat-error style="text-shadow: 0 0 3px white;" *ngIf="(cadastro.touched || cadastro.dirty) && cadastro.invalid">Campo de preenchimento Obrigatório</mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <input
-            matInput
-            type="text"
-            required
-            placeholder="Link Foto"
-            name="urlFoto"
-            formControlName="urlFoto"
-          />
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <input
-            matInput
-            readonly
-            [matDatepicker]="picker"
-            (click)="picker.open()"
-            placeholder="Data de lançamento"
-            name="dtLancamento"
-            formControlName="dtLancamento"
-          />
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <textarea
-            matInput
-            name="descricao"
-            placeholder="Descrição"
-            formControlName="descricao"
-          ></textarea>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <input
-            matInput
-            min="0"
-            max="10"
-            step="1"
-            type="number"
-            required
-            placeholder="Nota IMDb"
-            name="nota"
-            formControlName="nota"
-          />
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <input
-            matInput
-            type="text"
-            placeholder="Link IMDb"
-            name="urlIMDb"
-            formControlName="urlIMDb"
-          />
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <mat-select
-            required
-            placeholder="Genero"
-            titulo="Gênero"
-            formControlName="genero"
-          >
-            <mat-option *ngFor="let genero of generos" [value]="genero">
-              {{ genero }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-card-content>
+    <mat-card-content>
+      <dio-input-text titulo="Título" controlName="titulo" [formGroup]="cadastro"></dio-input-text>
+      <dio-input-text titulo="Link Foto" controlName="urlFoto" [formGroup]="cadastro"></dio-input-text>
+      <dio-input-date titulo="Data de Lançamento" controlName="dtLancamento" [formGroup]="cadastro"></dio-input-date>
+      <dio-input-textarea titulo="Descrição" controlName="descricao" [formGroup]="cadastro"></dio-input-textarea>
+      <dio-input-number titulo="Nota IMDb" controlName="nota" step="0.1" [formGroup]="cadastro"></dio-input-number>
+      <dio-input-text titulo="Link IMDb" controlName="urlIMDb" [formGroup]="cadastro"></dio-input-text>
+      <dio-input-select titulo="Gênero" [opcoes]="generos" controlName="genero" [formGroup]="cadastro"></dio-input-select>
+    </mat-card-content>
       <mat-card-actions>
         <button type="submit" color="accent" mat-raised-button>Salvar</button>
         <button type="reset" color="warn" mat-raised-button>Cancelar</button>

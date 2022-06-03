@@ -109,6 +109,26 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
+    },
+    {
+      "titulo": "Teste Romance",
+      "urlFoto": "Teste Romance",
+      "dtLancamento": "2022-06-12T03:00:00.000Z",
+      "descricao": "Teste RomanceTeste RomanceTeste RomanceTeste Romance",
+      "nota": 0,
+      "urlIMDb": "Teste Romance",
+      "genero": "Romance",
+      "id": 12
+    },
+    {
+      "titulo": "Teste Terror",
+      "urlFoto": "Teste Terror Teste Terror",
+      "dtLancamento": "2022-05-13T03:00:00.000Z",
+      "descricao": "Teste Terror Teste Terror Teste Terror Teste Terror Teste Terror",
+      "nota": 4,
+      "urlIMDb": "Teste Terror Teste Terror Teste Terror",
+      "genero": "Terror",
+      "id": 13
     }
   ]
 }
